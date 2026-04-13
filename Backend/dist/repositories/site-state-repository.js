@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SiteStateRepository = void 0;
 const customer_js_1 = require("../models/customer.js");
+const managed_proposal_js_1 = require("../models/managed-proposal.js");
 const publish_plan_js_1 = require("../models/publish-plan.js");
 const proposal_js_1 = require("../models/proposal.js");
 const template_js_1 = require("../models/template.js");
@@ -23,9 +24,43 @@ class SiteStateRepository {
             templates: (state.templates ?? []).map((template) => template_js_1.proposalTemplateSchema.parse(template)),
             plans: (state.plans ?? []).map((plan) => publish_plan_js_1.publishPlanSchema.parse(plan)),
             customers: normalizeCustomers(state.customers ?? []),
+            managedProposals: (state.managedProposals ?? []).map((proposal) => managed_proposal_js_1.managedProposalSchema.parse(proposal)),
             draftProposal: state.draftProposal ? proposal_js_1.proposalPayloadSchema.parse(state.draftProposal) : null,
             publishedProposal: state.publishedProposal ? proposal_js_1.proposalPayloadSchema.parse(state.publishedProposal) : null,
         };
+    }
+    async getManagedProposals() {
+        const state = await this.ensureState();
+        return (state.managedProposals ?? []).map((proposal) => managed_proposal_js_1.managedProposalSchema.parse(proposal));
+    }
+    async getManagedProposalById(id) {
+        const state = await this.ensureState();
+        const proposal = (state.managedProposals ?? []).find((item) => item.id === id);
+        return proposal ? managed_proposal_js_1.managedProposalSchema.parse(proposal) : null;
+    }
+    async getManagedProposalBySlug(slug) {
+        const state = await this.ensureState();
+        const proposal = (state.managedProposals ?? []).find((item) => item.slug === slug);
+        return proposal ? managed_proposal_js_1.managedProposalSchema.parse(proposal) : null;
+    }
+    async upsertManagedProposal(proposal) {
+        const validated = managed_proposal_js_1.managedProposalSchema.parse(proposal);
+        const state = await this.ensureState();
+        const next = (state.managedProposals ?? []).filter((item) => item.id !== validated.id);
+        next.push(validated);
+        state.managedProposals = next;
+        await state.save();
+        return validated;
+    }
+    async deleteManagedProposal(id) {
+        const state = await this.ensureState();
+        const next = (state.managedProposals ?? []).filter((item) => item.id !== id);
+        if (next.length === (state.managedProposals ?? []).length) {
+            return false;
+        }
+        state.managedProposals = next;
+        await state.save();
+        return true;
     }
     async getTemplates() {
         const state = await this.ensureState();

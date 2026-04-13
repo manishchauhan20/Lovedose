@@ -82,11 +82,25 @@ const customerSchema = new mongoose_1.Schema({
     updatedAt: { type: String, default: "" },
     proposalSnapshot: { type: mongoose_1.Schema.Types.Mixed, default: null },
 }, { _id: false });
+const managedProposalSchema = new mongoose_1.Schema({
+    id: { type: String, required: true },
+    slug: { type: String, required: true },
+    title: { type: String, required: true },
+    proposalType: { type: String, required: true, default: "story" },
+    templateId: { type: String, default: "" },
+    themeFamily: { type: String, default: "" },
+    coverImage: { type: String, default: "" },
+    status: { type: String, enum: ["draft", "published"], default: "published" },
+    createdAt: { type: String, default: "" },
+    updatedAt: { type: String, default: "" },
+    proposal: { type: mongoose_1.Schema.Types.Mixed, required: true },
+}, { _id: false });
 const siteStateSchema = new mongoose_1.Schema({
     key: { type: String, required: true, unique: true, default: "primary" },
     templates: { type: [templateSchema], default: template_js_1.proposalTemplates },
     plans: { type: [planSchema], default: publish_plan_js_1.publishPlans },
     customers: { type: [customerSchema], default: [] },
+    managedProposals: { type: [managedProposalSchema], default: [] },
     draftProposal: { type: mongoose_1.Schema.Types.Mixed, default: null },
     publishedProposal: { type: mongoose_1.Schema.Types.Mixed, default: null },
 }, {

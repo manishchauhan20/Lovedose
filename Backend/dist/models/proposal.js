@@ -2,7 +2,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.proposalRecordSchema = exports.proposalPayloadSchema = exports.customerDetailsSchema = exports.publishDurationIdSchema = exports.photoItemSchema = exports.relationshipTypeSchema = void 0;
 const zod_1 = require("zod");
-exports.relationshipTypeSchema = zod_1.z.enum(["GF", "Crush", "Wife"]);
+exports.relationshipTypeSchema = zod_1.z.enum([
+    "GF",
+    "Crush",
+    "Wife",
+    "Best Friends",
+    "Boyfrends",
+    "Dost",
+    "Husband",
+]);
 exports.photoItemSchema = zod_1.z.object({
     id: zod_1.z.string().min(1),
     image: zod_1.z.string().default(""),

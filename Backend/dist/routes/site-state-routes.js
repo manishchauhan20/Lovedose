@@ -4,6 +4,7 @@ exports.siteStateRoutes = exports.siteStateErrorHandler = void 0;
 const express_1 = require("express");
 const zod_1 = require("zod");
 const customer_js_1 = require("../models/customer.js");
+const managed_proposal_js_1 = require("../models/managed-proposal.js");
 const publish_plan_js_1 = require("../models/publish-plan.js");
 const proposal_js_1 = require("../models/proposal.js");
 const template_js_1 = require("../models/template.js");
@@ -14,6 +15,71 @@ const repository = new site_state_repository_js_1.SiteStateRepository();
 siteStateRoutes.get("/overview", async (_request, response, next) => {
     try {
         response.json(await repository.getOverview());
+    }
+    catch (error) {
+        next(error);
+    }
+});
+siteStateRoutes.get("/proposals", async (_request, response, next) => {
+    try {
+        response.json({ proposals: await repository.getManagedProposals() });
+    }
+    catch (error) {
+        next(error);
+    }
+});
+siteStateRoutes.get("/proposals/:id", async (request, response, next) => {
+    try {
+        const proposal = await repository.getManagedProposalById(request.params.id);
+        if (!proposal) {
+            response.status(404).json({ message: "Proposal not found" });
+            return;
+        }
+        response.json({ proposal });
+    }
+    catch (error) {
+        next(error);
+    }
+});
+siteStateRoutes.get("/proposal-by-slug/:slug", async (request, response, next) => {
+    try {
+        const proposal = await repository.getManagedProposalBySlug(request.params.slug);
+        if (!proposal) {
+            response.status(404).json({ message: "Proposal not found" });
+            return;
+        }
+        response.json({ proposal });
+    }
+    catch (error) {
+        next(error);
+    }
+});
+siteStateRoutes.post("/proposals", async (request, response, next) => {
+    try {
+        const payload = managed_proposal_js_1.managedProposalSchema.parse(request.body.proposal);
+        response.json({ proposal: await repository.upsertManagedProposal(payload) });
+    }
+    catch (error) {
+        next(error);
+    }
+});
+siteStateRoutes.put("/proposals/:id", async (request, response, next) => {
+    try {
+        const payload = managed_proposal_js_1.managedProposalSchema.parse({ ...request.body.proposal, id: request.params.id });
+        response.json({ proposal: await repository.upsertManagedProposal(payload) });
+    }
+    catch (error) {
+        next(error);
+    }
+});
+siteStateRoutes.delete("/proposals/:id", async (request, response, next) => {
+    try {
+        const deleted = await repository.deleteManagedProposal(request.params.id);
+        if (!deleted) {
+            response.status(404).json({ message: "Proposal not found" });
+            return;
+        }
+        response.json({ success: true });
     }
     catch (error) {
         next(error);

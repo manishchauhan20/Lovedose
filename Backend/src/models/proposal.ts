@@ -1,6 +1,14 @@
 import { z } from "zod";
 
-export const relationshipTypeSchema = z.enum(["GF", "Crush", "Wife"]);
+export const relationshipTypeSchema = z.enum([
+  "GF",
+  "Crush",
+  "Wife",
+  "Best Friends",
+  "Boyfrends",
+  "Dost",
+  "Husband",
+]);
 
 export const photoItemSchema = z.object({
   id: z.string().min(1),

@@ -1,0 +1,5 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm --prefix Frantend install",
+  "buildCommand": "npm --prefix Frantend run build"
+}

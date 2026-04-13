@@ -1,0 +1,9 @@
+{
+  "name": "lovedose-root",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix Frantend run build",
+    "dev": "npm --prefix Frantend run dev",
+    "start": "npm --prefix Frantend run start"
+  }
+}
