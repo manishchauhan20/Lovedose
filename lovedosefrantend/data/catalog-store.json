@@ -1,0 +1,168 @@
+{
+  "templates": [
+    {
+      "id": "gf-rose-glass",
+      "relationshipType": "GF",
+      "name": "Rose Glass",
+      "tagline": "Soft pink, premium, cinematic",
+      "description": "For a modern girlfriend proposal with glowing glass cards and a luxury romantic feel.",
+      "family": "romantic",
+      "image": "/uploads/templates/1775711108648-735951c9-604d-4fd0-b7c7-2c416b6fcfe7.png",
+      "rendererKey": "Girlfriend-Collection/proposal-experience"
+    },
+    {
+      "id": "gf-midnight-bloom",
+      "relationshipType": "GF",
+      "name": "Midnight Bloom",
+      "tagline": "Dark floral, intense, dramatic",
+      "description": "A richer girlfriend template with deeper contrast and strong spotlight sections.",
+      "family": "romantic",
+      "image": "",
+      "rendererKey": "Girlfriend-Collection/praposal-experience2"
+    },
+    {
+      "id": "gf-soft-letter",
+      "relationshipType": "GF",
+      "name": "Soft Letter",
+      "tagline": "Light, delicate, handwritten feel",
+      "description": "A calm girlfriend template with softer sections and a more personal love-letter mood.",
+      "family": "romantic",
+      "image": "",
+      "rendererKey": "Girlfriend-Collection/praposal-exprience3"
+    },
+    {
+      "id": "wife-eternal-vow",
+      "relationshipType": "Wife",
+      "name": "Eternal Vow",
+      "tagline": "Elegant, warm, timeless",
+      "description": "For wife-focused proposals with a mature layout, vow-style sections, and champagne tones.",
+      "family": "royal",
+      "image": "",
+      "rendererKey": "Wife-Collection/wifecollection1"
+    },
+    {
+      "id": "wife-golden-legacy",
+      "relationshipType": "Wife",
+      "name": "Golden Legacy",
+      "tagline": "Refined, graceful, premium",
+      "description": "A more royal template designed for commitment, memory, and forever promises.",
+      "family": "royal",
+      "image": "",
+      "rendererKey": "Wife-Collection/proposal-template2"
+    },
+    {
+      "id": "wife-classic-manor",
+      "relationshipType": "Wife",
+      "name": "Classic Manor",
+      "tagline": "Structured, timeless, graceful",
+      "description": "A wife template with a stately structure, elegant spacing, and vow-centered storytelling.",
+      "family": "royal",
+      "image": "",
+      "rendererKey": "Wife-Collection/wife-collection2"
+    },
+    {
+      "id": "crush-dream-letter",
+      "relationshipType": "Crush",
+      "name": "Dream Letter",
+      "tagline": "Light, playful, magical",
+      "description": "For crush proposals with floating charm, sweet anticipation, and gentle storytelling.",
+      "family": "dreamy",
+      "image": "",
+      "rendererKey": "Crush-Collection/crush-collection1"
+    },
+    {
+      "id": "crush-sky-confession",
+      "relationshipType": "Crush",
+      "name": "Sky Confession",
+      "tagline": "Airy, youthful, expressive",
+      "description": "A fresh confession layout that feels hopeful, bright, and a little bold.",
+      "family": "dreamy",
+      "image": "",
+      "rendererKey": "Crush-Collection/crush-collection2"
+    },
+    {
+      "id": "crush-starlight-note",
+      "relationshipType": "Crush",
+      "name": "Starlight Note",
+      "tagline": "Cute, cosmic, playful",
+      "description": "A crush template with soft celestial styling and floating card sections.",
+      "family": "dreamy",
+      "image": "",
+      "rendererKey": "Crush-Collection/proposal-template3"
+    }
+  ],
+  "plans": [
+    {
+      "id": "1h",
+      "label": "1 Hour",
+      "description": "Quick launch for a short surprise window.",
+      "hours": 1,
+      "price": 49,
+      "allTemplateAccess": false
+    },
+    {
+      "id": "3h",
+      "label": "3 Hours",
+      "description": "Ideal for a same-evening reveal.",
+      "hours": 3,
+      "price": 79,
+      "allTemplateAccess": false
+    },
+    {
+      "id": "6h",
+      "label": "6 Hours",
+      "description": "Enough time for a special date flow.",
+      "hours": 6,
+      "price": 99,
+      "allTemplateAccess": false
+    },
+    {
+      "id": "12h",
+      "label": "12 Hours",
+      "description": "Half-day access for a bigger moment.",
+      "hours": 12,
+      "price": 129,
+      "allTemplateAccess": false
+    },
+    {
+      "id": "24h",
+      "label": "24 Hours",
+      "description": "A full day for one premium template.",
+      "hours": 24,
+      "price": 149,
+      "allTemplateAccess": false
+    },
+    {
+      "id": "1m",
+      "label": "1 Month",
+      "description": "Long-running link with all template access.",
+      "hours": 720,
+      "price": 999,
+      "allTemplateAccess": true
+    },
+    {
+      "id": "3m",
+      "label": "3 Months",
+      "description": "Season-long access with all templates unlocked.",
+      "hours": 2160,
+      "price": 2999,
+      "allTemplateAccess": true
+    },
+    {
+      "id": "6m",
+      "label": "6 Months",
+      "description": "Extended campaign with full template control.",
+      "hours": 4320,
+      "price": 4999,
+      "allTemplateAccess": true
+    },
+    {
+      "id": "1y",
+      "label": "1 Year",
+      "description": "Annual premium access for all templates.",
+      "hours": 8760,
+      "price": 7999,
+      "allTemplateAccess": true
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "draft": null,
+  "published": {
+    "boyName": "Manish",
+    "girlName": "muskan",
+    "message": "nothimng",
+    "relationshipType": "Boyfrends",
+    "templateId": "wife-golden-legacy",
+    "howWeMet": "nothimng",
+    "firstMeetingDate": "2026-01-15",
+    "nickname": "muusau",
+    "whyILoveYou": "nothimng",
+    "futureDreams": "nothimng",
+    "heroImage": "",
+    "heroImageCaption": "",
+    "gallery": [],
+    "voiceNote": "",
+    "publishDurationId": "1y",
+    "publishDurationLabel": "1 Year",
+    "publishHours": 8760,
+    "publishPrice": 7999,
+    "allTemplateAccess": true,
+    "purchasedTemplateIds": [
+      "gf-rose-glass",
+      "gf-midnight-bloom",
+      "gf-soft-letter",
+      "wife-eternal-vow",
+      "wife-golden-legacy",
+      "wife-classic-manor",
+      "crush-dream-letter",
+      "crush-sky-confession",
+      "crush-starlight-note"
+    ],
+    "publishExpiresAt": "2027-04-11T20:48:59.014Z",
+    "customerDetails": {
+      "fullName": "Chauhan Manish",
+      "email": "cm80818087@gmail.com",
+      "phone": "1234567890",
+      "occasion": "Nothing",
+      "notes": "",
+      "password": "123456"
+    }
+  }
+}
